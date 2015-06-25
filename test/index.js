@@ -42,8 +42,8 @@ describe('#toNATOCode', function() {
 		encodify.toNATOCode('code', 'German').should.eql('Cäsar Otto Dora Emil');
 		encodify.toNATOCode('code', 'german').should.eql('Cäsar Otto Dora Emil');
 		encodify.toNATOCode('code', 'FRENCH').should.eql('Célestin Oscar Désiré Eugène');
-		encodify.toNATOCode('C.O D$E').should.eql('Charlie dot Oscar space Delta undefined Echo');
-		encodify.toNATOCode('C.O D$E', 'FRENCH').should.eql('Célestin point Oscar espace Désiré undefined Eugène');
+		encodify.toNATOCode('C.O D@E').should.eql('Charlie dot Oscar space Delta at Echo');
+		encodify.toNATOCode('C.O D@E', 'FRENCH').should.eql('Célestin point Oscar espace Désiré arobase Eugène');
 		done();
 	});
 

@@ -21,7 +21,7 @@ A small library providing utility methods to encode and decode to various code f
 	// Convert to NATO Code - French and German currently supported
     encodify.toNATOCode('CODE').should.eql('Charlie Oscar Delta Echo');
     encodify.toNATOCode('code', 'German').should.eql('Cäsar Otto Dora Emil');
-    encodify.toNATOCode('C.O D$E', 'FRENCH').should.eql('Célestin point Oscar espace Désiré undefined Eugène');
+    encodify.toNATOCode('C.O D@E', 'FRENCH').should.eql('Célestin point Oscar espace Désiré arobase Eugène');
 
 	// Convert to list of Anagrams
 	encodify.toAnagrams('cod').should.eql(['cod', 'cdo', 'ocd', 'odc', 'dco', 'doc']);
