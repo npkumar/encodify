@@ -10,8 +10,21 @@ A small library providing utility methods to encode and decode to various code f
 ## Usage
 
     var encodify = require('encodify');
+
+	// Convert to Pig Latin Script
     encodify.toPigLatin('glove').should.eql('oveglay');
 
+	// Convert to Roman Numeral
+    encodify.toRomanNumeral(55).should.eql('XXXXXV');
+
+	// Convert to NATO Code - French and German currently supported
+    encodify.toNATOCode('CODE').should.eql('Charlie Oscar Delta Echo');
+    encodify.toNATOCode('code', 'German').should.eql('Cäsar Otto Dora Emil');
+    encodify.toNATOCode('C.O D$E', 'FRENCH').should.eql('Célestin point Oscar espace Désiré undefined Eugène');
+
+	// Convert to list of Anagrams
+	encodify.toAnagrams('cod').should.eql(['cod', 'cdo', 'ocd', 'odc', 'dco', 'doc']);
+	encodify.toAnagrams('%*!').should.eql(['%*!', '%!*', '*%!', '*!%', '!%*', '!*%']);
 ## Tests
 
   npm test
