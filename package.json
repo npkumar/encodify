@@ -1,0 +1,30 @@
+{
+  "name": "codify",
+  "version": "0.1.0",
+  "description": "convert to popular human code formats",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npkumar/codify.git"
+  },
+  "keywords": [
+    "code",
+    "piglatin"
+  ],
+  "author": "Nitin Pradeep Kumar <getnpk@gmail.com> (https://github.com/npkumar)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/npkumar/codify/issues"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "homepage": "https://github.com/npkumar/codify#readme",
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "should": "^7.0.1"
+  }
+}
