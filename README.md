@@ -3,6 +3,7 @@ Encodify
 
 A small library providing utility methods to encode and decode to various code formats
 
+[![NPM](https://nodei.co/npm/encodify.png)](https://npmjs.org/package/encodify)
 ## Installation
 
   npm install encodify --save
