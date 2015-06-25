@@ -9,8 +9,8 @@ A small library providing utility methods to encode and decode to various code f
 
 ## Usage
 
-  var codify = require('codify');
-  codify.toPigLatin('glove').should.eql('oveglay');
+    var codify = require('codify');
+    codify.toPigLatin('glove').should.eql('oveglay');
 
 ## Tests
 
