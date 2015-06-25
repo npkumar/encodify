@@ -1,6 +1,6 @@
 {
   "name": "encodify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "convert to popular human code formats",
   "main": "index.js",
   "scripts": {
