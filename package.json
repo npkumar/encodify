@@ -12,7 +12,11 @@
   },
   "keywords": [
     "code",
-    "piglatin"
+    "piglatin",
+    "roman",
+    "nato",
+    "language",
+    "anagram"
   ],
   "author": "Nitin Pradeep Kumar <getnpk@gmail.com> (https://github.com/npkumar)",
   "license": "MIT",
