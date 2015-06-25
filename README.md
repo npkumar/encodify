@@ -5,12 +5,12 @@ A small library providing utility methods to encode and decode to various code f
 
 ## Installation
 
-  npm install codify --save
+  npm install encodify --save
 
 ## Usage
 
-    var codify = require('codify');
-    codify.toPigLatin('glove').should.eql('oveglay');
+    var encodify = require('encodify');
+    encodify.toPigLatin('glove').should.eql('oveglay');
 
 ## Tests
 

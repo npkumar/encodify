@@ -1,5 +1,5 @@
 {
-  "name": "codify",
+  "name": "encodify",
   "version": "0.1.0",
   "description": "convert to popular human code formats",
   "main": "index.js",

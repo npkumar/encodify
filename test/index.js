@@ -1,11 +1,11 @@
 var should = require('should'),
-	codify = require('../index');
+	encodify = require('../index');
 
 describe('#toPigLatin', function () {
 	it('should convert to Pig Latin', function (done) {
-		codify.toPigLatin('california').should.eql('aliforniacay');
-		codify.toPigLatin('glove').should.eql('oveglay');
-		codify.toPigLatin('algorithm').should.eql('algorithmway');
+		encodify.toPigLatin('california').should.eql('aliforniacay');
+		encodify.toPigLatin('glove').should.eql('oveglay');
+		encodify.toPigLatin('algorithm').should.eql('algorithmway');
 		done();
 	});
 });
