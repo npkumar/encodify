@@ -1,4 +1,4 @@
-Codify
+Encodify
 =========
 
 A small library providing utility methods to encode and decode to various code formats
