@@ -26,6 +26,11 @@ A small library providing utility methods to encode and decode to various code f
 	// Convert to list of Anagrams
 	encodify.toAnagrams('cod').should.eql(['cod', 'cdo', 'ocd', 'odc', 'dco', 'doc']);
 	encodify.toAnagrams('%*!').should.eql(['%*!', '%!*', '*%!', '*!%', '!%*', '!*%']);
+
+  // Convert to Spinal Case
+    encodify.toSpinalCase('thisIsSpinalTap').should.eql('this-is-spinal-tap');
+    encodify.toSpinalCase('This Is Spinal Tap').should.eql('this-is-spinal-tap');
+    encodify.toSpinalCase('The_Andy_Griffith_Show').should.eql('the-andy-griffith-show');
 ## Tests
 
   npm test
