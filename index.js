@@ -133,6 +133,24 @@ module.exports = {
     }
     permutation('', word);
     return list;
+  },
+
+  /*
+   * Converts given String to its spinal case
+   * @param {string} string to be converted
+   * @returns {string}
+   */
+  toSpinalCase: function(str) {
+    var temp = str.charAt(0);
+    str = str.replace(/ /g, '-').replace(/_/g, '-');
+    for (var i = 1; i < str.length; i++) {
+      if ((str.charAt(i) == str.charAt(i).toUpperCase()) && (str.charAt(i - 1) != ' ') && (str.charAt(i - 1) != '-') && (str.charAt(i) != '-')) {
+        temp += '-' + str.charAt(i);
+      } else {
+        temp += str.charAt(i);
+      }
+    }
+    return temp.toLowerCase();
   }
 
 };

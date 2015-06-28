@@ -64,3 +64,12 @@ describe('#toAnagrams', function() {
 		done();
 	});
 });
+
+describe('#toSpinalCase', function() {
+	it('should convert to spinalCase', function(done) {
+		encodify.toSpinalCase('thisIsSpinalTap').should.eql('this-is-spinal-tap');
+		encodify.toSpinalCase('This Is Spinal Tap').should.eql('this-is-spinal-tap');
+		encodify.toSpinalCase('The_Andy_Griffith_Show').should.eql('the-andy-griffith-show');
+		done();
+	});
+});
