@@ -73,3 +73,19 @@ describe('#toSpinalCase', function() {
 		done();
 	});
 });
+
+
+describe('#toFibonacci', function() {
+	it('should convert to Fibonacci Series', function(done) {
+		encodify.toFibonacci(10).should.eql([ 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ]);
+		encodify.toFibonacci(3.9).should.eql([ 1, 1, 2 ]);
+		done();
+	});
+
+	it('should not convert to Fibonacci Series', function(done) {
+		encodify.toFibonacci('foobar').should.eql([]);
+		encodify.toFibonacci(-1).should.eql([]);
+		encodify.toFibonacci().should.eql([]);
+		done();
+	});
+});
