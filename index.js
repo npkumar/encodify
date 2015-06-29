@@ -174,6 +174,24 @@ module.exports = {
       }
     }
     return list;
+  },
+
+  toDNABasePair: function(str) {
+    var dict = {
+      'A': 'T',
+      'T': 'A',
+      'C': 'G',
+      'G': 'C'
+    };
+    var temp = '';
+    for (var i = 0; i < str.length; i++) {
+      if (dict[str.charAt(i).toUpperCase()] !== undefined) {
+        temp += dict[str.charAt(i).toUpperCase()];
+      } else {
+        temp += str.charAt(i).toUpperCase();
+      }
+    }
+    return temp;
   }
 
 };
