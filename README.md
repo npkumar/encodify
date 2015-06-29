@@ -1,4 +1,4 @@
-Encodify
+Encodify [![Build Status](https://travis-ci.org/npkumar/encodify.svg?branch=master)](https://travis-ci.org/npkumar/encodify)
 =========
 
 A small library providing utility methods to encode and decode to various code formats
