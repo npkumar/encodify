@@ -1,6 +1,6 @@
 {
   "name": "encodify",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "convert to popular human code formats",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,8 @@
     "language",
     "anagram",
     "spinalCase",
-    "fibonacci"
+    "fibonacci",
+    "dna"
   ],
   "author": "Nitin Pradeep Kumar <getnpk@gmail.com> (https://github.com/npkumar)",
   "license": "MIT",

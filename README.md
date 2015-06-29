@@ -35,6 +35,10 @@ A small library providing utility methods to encode and decode to various code f
     // Convert to Fibonacci Series
     encodify.toFibonacci(10).should.eql([ 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ]);
     encodify.toFibonacci(3.9).should.eql([ 1, 1, 2 ]);
+
+    // Convert to Base DNA Pair
+    encodify.toDNABasePair('GGCC').should.eql('CCGG');
+    encodify.toDNABasePair('GaTcAatagc').should.eql('CTAGTTATCG');
     
 ## Tests
 
