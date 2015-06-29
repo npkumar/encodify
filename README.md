@@ -31,6 +31,10 @@ A small library providing utility methods to encode and decode to various code f
     encodify.toSpinalCase('thisIsSpinalTap').should.eql('this-is-spinal-tap');
     encodify.toSpinalCase('This Is Spinal Tap').should.eql('this-is-spinal-tap');
     encodify.toSpinalCase('The_Andy_Griffith_Show').should.eql('the-andy-griffith-show');
+
+    // Convert to Fibonacci Series
+    encodify.toFibonacci(10).should.eql([ 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ]);
+    encodify.toFibonacci(3.9).should.eql([ 1, 1, 2 ]);
     
 ## Tests
 
@@ -39,7 +43,7 @@ A small library providing utility methods to encode and decode to various code f
 ## Contributing
 
 In lieu of a formal styleguide, take care to maintain the existing coding style.
-Add unit tests for any new or changed functionality. Lint and test your code.
+Add unit tests for any new or changed functionality. Lint and test your code. Feel free to add more conversions!
 
 ## Release History
 
