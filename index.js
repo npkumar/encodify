@@ -151,6 +151,29 @@ module.exports = {
       }
     }
     return temp.toLowerCase();
+  },
+
+  /*
+   * Converts given Number to its Fibonacci series upto Number
+   * @param {number} length of series
+   * @returns {array}
+   */
+  toFibonacci: function(num) {
+    var list = [];
+
+    function fib(n) {
+      if (n <= 2) {
+        return 1;
+      }
+      return fib(n - 1) + fib(n - 2);
+    }
+
+    if (typeof num === 'number') {
+      for (var i = 1; i <= num; i++) {
+        list.push(fib(i));
+      }
+    }
+    return list;
   }
 
 };
