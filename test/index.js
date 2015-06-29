@@ -89,3 +89,13 @@ describe('#toFibonacci', function() {
 		done();
 	});
 });
+
+describe('#toDNABasePair', function() {
+	it('should convert to DNABasePair', function(done) {
+		encodify.toDNABasePair('atcg').should.eql('TAGC');
+		encodify.toDNABasePair('GGCC').should.eql('CCGG');
+		encodify.toDNABasePair('GaTcAatagc').should.eql('CTAGTTATCG');
+		encodify.toDNABasePair('abcdefeghi').should.eql('TBGDEFECHI');
+		done();
+	});
+});
