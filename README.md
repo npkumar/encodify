@@ -39,6 +39,10 @@ A small library providing utility methods to encode and decode to various code f
     // Convert to Base DNA Pair
     encodify.toDNABasePair('GGCC').should.eql('CCGG');
     encodify.toDNABasePair('GaTcAatagc').should.eql('CTAGTTATCG');
+
+    // Convert to list of Prime numbers upto given specified number
+    encodify.toPrimes(10).should.eql([2, 3, 5, 7]);
+    encodify.toPrimes(30.97).should.eql([2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
     
 ## Tests
 
