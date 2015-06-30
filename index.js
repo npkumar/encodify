@@ -176,6 +176,11 @@ module.exports = {
     return list;
   },
 
+  /*
+   * Converts given String to its complimentary DNA Pair
+   * @param {string} dna code to be converted
+   * @returns {string}
+   */
   toDNABasePair: function(str) {
     var dict = {
       'A': 'T',
@@ -192,6 +197,39 @@ module.exports = {
       }
     }
     return temp;
+  },
+
+  /*
+   * Converts given number to list of prime numbers upto and including given number
+   * @param {number} number to be converted
+   * @returns {array}
+   */
+  toPrimes: function(num) {
+    var list = [];
+    if (typeof num === 'number') {
+      for (i = 1; i <= num; i++) {
+        if (isPrime(i)) {
+          list.push(i);
+        }
+      }
+    }
+
+    function isPrime(value) {
+      if (value == 2) {
+        return true;
+      }
+      if (value <= 1 || value % 2 === 0) {
+        return false;
+      }
+      for (var i = 3; i <= value / 2; i++) {
+        if (value % i === 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    return list;
   }
 
 };
