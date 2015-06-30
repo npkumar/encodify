@@ -17,7 +17,6 @@ describe('#toPigLatin', function() {
 	});
 });
 
-
 describe('#toRomanNumeral', function() {
 	it('should convert to Roman Numeral', function(done) {
 		encodify.toRomanNumeral(29).should.eql('XXIX');
@@ -118,4 +117,25 @@ describe('#toPrimes', function() {
 		encodify.toPrimes().should.eql([]);
 		done();
 	});
+});
+
+describe('#toLCM', function() {
+	it('should convert to LCM', function(done) {
+		encodify.toLCM([24, 60]).should.eql(120);
+		encodify.toLCM([1, 2, 3, 4, 5]).should.eql(60);
+		encodify.toLCM([330, 65, 15]).should.eql(4290);
+		encodify.toLCM([330, 90, 65, 55, 20, 15]).should.eql(25740);
+		encodify.toLCM([330, 'dummy', null, 65, 15]).should.eql(4290);
+		done();
+	})
+});
+
+describe('#toGCD', function() {
+	it('should convert to GCD', function(done) {
+		encodify.toGCD([24, 60]).should.eql(12);
+		encodify.toGCD([45, 60, 330]).should.eql(15);
+		encodify.toGCD([25, 45, 60, 115, 330]).should.eql(5);
+		encodify.toGCD([45, 60, [], 330, 'foobar']).should.eql(15);
+		done();
+	})
 });
