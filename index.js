@@ -115,6 +115,20 @@ module.exports = {
     }
   },
 
+  toMorseCode: function(str) {
+    var code = '';
+    var data = require('./data/morse');
+    if (typeof str === 'string') {
+      for (var i = 0; i < str.length; i++) {
+        if (data[str.charAt(i).toLowerCase()] != undefined) {
+          code += data[str.charAt(i).toLowerCase()] + ' ';
+        } else {
+          code += str.charAt(i).toUpperCase() + ' ';
+        }
+      }
+    }
+    return code.trim();
+  },
   /*
    * Converts given String to its list of anagrams
    * @param {string} string to be converted
