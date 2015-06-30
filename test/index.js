@@ -77,8 +77,8 @@ describe('#toSpinalCase', function() {
 
 describe('#toFibonacci', function() {
 	it('should convert to Fibonacci Series', function(done) {
-		encodify.toFibonacci(10).should.eql([ 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ]);
-		encodify.toFibonacci(3.9).should.eql([ 1, 1, 2 ]);
+		encodify.toFibonacci(10).should.eql([1, 1, 2, 3, 5, 8, 13, 21, 34, 55]);
+		encodify.toFibonacci(3.9).should.eql([1, 1, 2]);
 		done();
 	});
 
@@ -96,6 +96,26 @@ describe('#toDNABasePair', function() {
 		encodify.toDNABasePair('GGCC').should.eql('CCGG');
 		encodify.toDNABasePair('GaTcAatagc').should.eql('CTAGTTATCG');
 		encodify.toDNABasePair('abcdefeghi').should.eql('TBGDEFECHI');
+		done();
+	});
+});
+
+describe('#toPrimes', function() {
+	it('should convert to Primes', function(done) {
+		encodify.toPrimes(1).should.eql([]);
+		encodify.toPrimes(2).should.eql([2]);
+		encodify.toPrimes(7).should.eql([2, 3, 5, 7]);
+		encodify.toPrimes(10).should.eql([2, 3, 5, 7]);
+		encodify.toPrimes(30.97).should.eql([2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
+		encodify.toPrimes(50).should.eql([2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]);
+		done();
+	});
+
+	it('should not convert to Primes', function(done) {
+		encodify.toPrimes(-1).should.eql([]);
+		encodify.toPrimes(0).should.eql([]);
+		encodify.toPrimes('foobar').should.eql([]);
+		encodify.toPrimes().should.eql([]);
 		done();
 	});
 });
