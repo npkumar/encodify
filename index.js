@@ -1,3 +1,5 @@
+var util = require('./util/util');
+
 module.exports = {
   /*
    * Converts given word to Pig Latin
@@ -230,6 +232,48 @@ module.exports = {
     }
 
     return list;
+  },
+
+  /*
+   * Converts a list of numbers to its LCM
+   * @param {array} the numbers whose LCM is to be calculated
+   * @returns {number}
+   */
+  toLCM: function(arr) {
+    var lcm_value = 1;
+    arr = util.filterNumbers(arr);
+
+    function lcmArray(arr) {
+      if (arr.length === 0) {
+        return lcm_value;
+      }
+      lcm_value = (lcm_value * arr[0]) / util.gcd(lcm_value, arr[0]);
+      lcmArray(arr.splice(1));
+    }
+
+    lcmArray(arr);
+    return lcm_value;
+  },
+
+  /*
+   * Converts a list of numbers to its GCD
+   * @param {array} the numbers whose GCD is to be calculated
+   * @returns {number}
+   */
+  toGCD: function(arr) {
+    var gcd_value = 0;
+    arr = util.filterNumbers(arr);
+
+    function gcdArray(arr) {
+      if (arr.length === 0) {
+        return gcd_value;
+      }
+      gcd_value = util.gcd(gcd_value, arr[0]);
+      gcdArray(arr.splice(1));
+    }
+
+    gcdArray(arr);
+    return gcd_value;
   }
 
 };
