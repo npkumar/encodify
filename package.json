@@ -1,7 +1,7 @@
 {
   "name": "encodify",
-  "version": "0.1.6",
-  "description": "convert to popular human code formats",
+  "version": "0.1.7",
+  "description": "convert to popular formats",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,7 +20,9 @@
     "spinalCase",
     "fibonacci",
     "dna",
-    "prime"
+    "prime",
+    "lcm",
+    "gcm"
   ],
   "author": "Nitin Pradeep Kumar <getnpk@gmail.com> (https://github.com/npkumar)",
   "license": "MIT",

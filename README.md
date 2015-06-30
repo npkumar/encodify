@@ -43,6 +43,14 @@ A small library providing utility methods to encode and decode to various code f
     // Convert to list of Prime numbers upto given specified number
     encodify.toPrimes(10).should.eql([2, 3, 5, 7]);
     encodify.toPrimes(30.97).should.eql([2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
+
+    // Calculate LCM of all values in an array
+    encodify.toLCM([330, 65, 15]).should.eql(4290);
+    encodify.toLCM([330, 90, 65, 55, 20, 15]).should.eql(25740);
+
+    // Calculate GCD of all values in an array
+    encodify.toGCD([45, 60, 330]).should.eql(15);
+    encodify.toGCD([25, 45, 60, 115, 330]).should.eql(5);
     
 ## Tests
 
