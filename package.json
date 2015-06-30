@@ -22,7 +22,7 @@
     "dna",
     "prime",
     "lcm",
-    "gcm"
+    "gcd"
   ],
   "author": "Nitin Pradeep Kumar <getnpk@gmail.com> (https://github.com/npkumar)",
   "license": "MIT",
