@@ -127,7 +127,7 @@ describe('#toLCM', function() {
 		encodify.toLCM([330, 90, 65, 55, 20, 15]).should.eql(25740);
 		encodify.toLCM([330, 'dummy', null, 65, 15]).should.eql(4290);
 		done();
-	})
+	});
 });
 
 describe('#toGCD', function() {
@@ -137,5 +137,21 @@ describe('#toGCD', function() {
 		encodify.toGCD([25, 45, 60, 115, 330]).should.eql(5);
 		encodify.toGCD([45, 60, [], 330, 'foobar']).should.eql(15);
 		done();
-	})
+	});
+});
+
+describe('#toMorseCode', function() {
+	it('should convert to Morse Code', function(done) {
+		encodify.toMorseCode('secret').should.eql('... . -.-. .-. . -');
+		encodify.toMorseCode('b.o@nd').should.eql('-... .-.-.- --- .--.-. -. -..');
+		encodify.toMorseCode('NPK').should.eql('-. .--. -.-');
+		encodify.toMorseCode('Attack!').should.eql('.- - - .- -.-. -.- -.-.--');
+		done();
+	});
+
+	it('should not convert to Morse Code', function(done) {
+		encodify.toMorseCode().should.eql('');
+		encodify.toMorseCode([]).should.eql('');
+		done();
+	});
 });

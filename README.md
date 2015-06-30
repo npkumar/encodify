@@ -23,6 +23,11 @@ A small library providing utility methods to encode and decode to various code f
     encodify.toNATOCode('code', 'German').should.eql('Cäsar Otto Dora Emil');
     encodify.toNATOCode('C.O D@E', 'FRENCH').should.eql('Célestin point Oscar espace Désiré arobase Eugène');
 
+    // Convert to Morse Code
+    encodify.toMorseCode('secret').should.eql('... . -.-. .-. . -');
+    encodify.toMorseCode('b.o@nd').should.eql('-... .-.-.- --- .--.-. -. -..');
+    encodify.toMorseCode('NPK').should.eql('-. .--. -.-');
+
     // Convert to list of Anagrams
     encodify.toAnagrams('cod').should.eql(['cod', 'cdo', 'ocd', 'odc', 'dco', 'doc']);
     encodify.toAnagrams('%*!').should.eql(['%*!', '%!*', '*%!', '*!%', '!%*', '!*%']);

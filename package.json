@@ -1,6 +1,6 @@
 {
   "name": "encodify",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "convert to popular formats",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,8 @@
     "dna",
     "prime",
     "lcm",
-    "gcd"
+    "gcd",
+    "morse"
   ],
   "author": "Nitin Pradeep Kumar <getnpk@gmail.com> (https://github.com/npkumar)",
   "license": "MIT",
