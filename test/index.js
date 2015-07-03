@@ -157,11 +157,55 @@ describe('#toMorseCode', function() {
 });
 
 describe('#toFlattenedArray', function() {
-	it('should convert to GCD', function(done) {
-		encodify.toFlattenedArray([[['a']], [['b']]]).should.eql(['a', 'b']);
-		encodify.toFlattenedArray([[1, [2], [3, [[4]]]]]).should.eql([1, 2, 3, 4]);
-		encodify.toFlattenedArray([1, [], [3, [[4]]]]).should.eql([1, 3, 4]);
-		encodify.toFlattenedArray([1, [5, [6, [7, 8, [9]]]], [3, [[4]]]]).should.eql([1, 5, 6, 7, 8, 9, 3, 4]);
+	it('should convert to Flattened Array', function(done) {
+		encodify.toFlattenedArray([
+			[
+				['a']
+			],
+			[
+				['b']
+			]
+		]).should.eql(['a', 'b']);
+		encodify.toFlattenedArray([
+			[1, [2],
+				[3, [
+					[4]
+				]]
+			]
+		]).should.eql([1, 2, 3, 4]);
+		encodify.toFlattenedArray([1, [],
+			[3, [
+				[4]
+			]]
+		]).should.eql([1, 3, 4]);
+		encodify.toFlattenedArray([1, [5, [6, [7, 8, [9]]]],
+			[3, [
+				[4]
+			]]
+		]).should.eql([1, 5, 6, 7, 8, 9, 3, 4]);
+		done();
+	});
+});
+
+describe('#toBinaryCode', function() {
+	it('should convert to Binary', function(done) {
+		encodify.toBinary('&#@!').should.eql('100110 100011 1000000 100001');
+		encodify.toBinary(9).should.eql('111001');
+		encodify.toBinary('f').should.eql('1100110');
+		encodify.toBinary('0').should.eql('110000');
+		encodify.toBinary(' ').should.eql('100000');
+		encodify.toBinary('I am the War Cheif!').should.eql('1001001 100000 1100001 1101101 100000 1110100 1101000 1100101 100000 1010111 1100001 1110010 100000 1000011 1101000 1100101 1101001 1100110 100001');
+		done();
+	});
+});
+
+describe('#fromBinaryCode', function() {
+	it('should convert from Binary', function(done) {
+		encodify.fromBinary('111001').should.eql('9');
+		encodify.fromBinary('1100110').should.eql('f');
+		encodify.fromBinary('110000').should.eql('0');
+		encodify.fromBinary('100000').should.eql(' ');
+		encodify.fromBinary('1001001 100000 1100001 1101101 100000 1110100 1101000 1100101 100000 1010111 1100001 1110010 100000 1000011 1101000 1100101 1101001 1100110 100001').should.eql('I am the War Cheif!');
 		done();
 	});
 });
