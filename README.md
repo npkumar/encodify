@@ -28,6 +28,16 @@ A small library providing utility methods to encode and decode to various code f
     encodify.toMorseCode('b.o@nd').should.eql('-... .-.-.- --- .--.-. -. -..');
     encodify.toMorseCode('NPK').should.eql('-. .--. -.-');
 
+    // Convert to Binary Code
+    encodify.toBinary('I am the War Cheif!').should.eql('1001001 100000 1100001 1101101 100000 1110100 1101000 1100101 100000 1010111 1100001 1110010 100000 1000011 1101000 1100101 1101001 1100110 100001');
+    encodify.toBinary('&#@!').should.eql('100110 100011 1000000 100001');
+    encodify.toBinary(9).should.eql('111001');
+
+    // Convert from Binary Code
+    encodify.fromBinary('1001001 100000 1100001 1101101 100000 1110100 1101000 1100101 100000 1010111 1100001 1110010 100000 1000011 1101000 1100101 1101001 1100110 100001').should.eql('I am the War Cheif!');
+    encodify.fromBinary('100110 100011 1000000 100001').should.eql('&#@!');
+    encodify.fromBinary('111001').should.eql('9');
+
     // Convert to list of Anagrams
     encodify.toAnagrams('cod').should.eql(['cod', 'cdo', 'ocd', 'odc', 'dco', 'doc']);
     encodify.toAnagrams('%*!').should.eql(['%*!', '%!*', '*%!', '*!%', '!%*', '!*%']);
