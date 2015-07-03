@@ -206,6 +206,7 @@ describe('#fromBinaryCode', function() {
 		encodify.fromBinary('110000').should.eql('0');
 		encodify.fromBinary('100000').should.eql(' ');
 		encodify.fromBinary('1001001 100000 1100001 1101101 100000 1110100 1101000 1100101 100000 1010111 1100001 1110010 100000 1000011 1101000 1100101 1101001 1100110 100001').should.eql('I am the War Cheif!');
+		encodify.fromBinary('100110 100011 1000000 100001').should.eql('&#@!');
 		done();
 	});
 });
