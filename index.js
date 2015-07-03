@@ -288,6 +288,27 @@ module.exports = {
 
     gcdArray(arr);
     return gcd_value;
+  },
+
+  /*
+   * Convert to flattened array from any multi dimensional array of varying level of nesting
+   * @param {array} multi dimensional array of varying level of nesting
+   * @returns {array} single dimensional array containing all the element values from input array
+   */
+  toFlattenedArray: function(arr) {
+    var temp = [];
+
+    function steamroller(arr) {
+      for (var i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+          steamroller(arr[i]);
+        } else {
+          temp.push(arr[i]);
+        }
+      }
+      return temp;
+    }
+    return steamroller(arr);
   }
 
 };
