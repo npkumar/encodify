@@ -309,6 +309,45 @@ module.exports = {
       return temp;
     }
     return steamroller(arr);
-  }
+  },
 
+  /*
+   * Converts a string or number to its binary equivalent.
+   * Passing in sentences would leave a space between each binary code for clarity in reading
+   * @param {string|number} input to be converted to binary code
+   * @returns {string}
+   */
+  toBinary: function(str) {
+    str = str.toString();
+    var temp = '';
+    for (var i = 0; i < str.length; i++) {
+      try {
+        temp += str[i].charCodeAt(0).toString(2) + ' ';
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    return temp.trim();
+  },
+
+  /*
+   * Converts a binary code string to its equivalent sentence/word structure.
+   * @param {string} the binary string which is to be converted
+   * @returns {string}
+   */
+  fromBinary: function(str) {
+    str = str.toString();
+    var temp = '';
+    var list = str.split(' ');
+
+    // sanity check for binary not done
+    for (var i = 0; i < list.length; i++) {
+      try {
+        temp += String.fromCharCode(parseInt(list[i], 2).toString());
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    return temp;
+  }
 };
