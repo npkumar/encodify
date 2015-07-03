@@ -155,3 +155,13 @@ describe('#toMorseCode', function() {
 		done();
 	});
 });
+
+describe('#toFlattenedArray', function() {
+	it('should convert to GCD', function(done) {
+		encodify.toFlattenedArray([[['a']], [['b']]]).should.eql(['a', 'b']);
+		encodify.toFlattenedArray([[1, [2], [3, [[4]]]]]).should.eql([1, 2, 3, 4]);
+		encodify.toFlattenedArray([1, [], [3, [[4]]]]).should.eql([1, 3, 4]);
+		encodify.toFlattenedArray([1, [5, [6, [7, 8, [9]]]], [3, [[4]]]]).should.eql([1, 5, 6, 7, 8, 9, 3, 4]);
+		done();
+	});
+});
