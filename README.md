@@ -56,6 +56,10 @@ A small library providing utility methods to encode and decode to various code f
     // Calculate GCD of all values in an array
     encodify.toGCD([45, 60, 330]).should.eql(15);
     encodify.toGCD([25, 45, 60, 115, 330]).should.eql(5);
+
+    // Convert to flattened array from any multi dimensional array of varying level of nesting
+    encodify.toFlattenedArray([1, [], [3, [[4]]]]).should.eql([1, 3, 4]);
+    encodify.toFlattenedArray([1, [5, [6, [7, 8, [9]]]], [3, [[4]]]]).should.eql([1, 5, 6, 7, 8, 9, 3, 4]);
     
 ## Tests
 
