@@ -1,6 +1,8 @@
 Encodify [![Build Status](https://travis-ci.org/npkumar/encodify.svg?branch=master)](https://travis-ci.org/npkumar/encodify)
 =========
 
+[![Join the chat at https://gitter.im/npkumar/encodify](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/npkumar/encodify?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A small library providing utility methods to encode and decode to various code formats
 
 [![NPM](https://nodei.co/npm/encodify.png)](https://npmjs.org/package/encodify)
