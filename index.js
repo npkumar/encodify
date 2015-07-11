@@ -115,6 +115,11 @@ module.exports = {
     }
   },
 
+  /*
+   * Converts given string to MORSE code
+   * @param {string} string to be converted
+   * @returns {string}
+   */
   toMorseCode: function(str) {
     var code = '';
     var data = require('./data/morse');
@@ -129,6 +134,34 @@ module.exports = {
     }
     return code.trim();
   },
+
+  /*
+   * Converts MORSE Code back to a readable string
+   * @param {string} string to be converted
+   * @returns {string}
+   */
+  fromMorseCode: function(str) {
+    var code = '';
+    var data = require('./data/morse');
+    if (typeof str === 'string') {
+      var letters = str.split(' ');
+      for (var i = 0; i < letters.length; i++) {
+        var flag = false;
+        for (var j in data) {
+          if (data[j] == letters[i]) {
+            code += j;
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) {
+          code += letters[i];
+        }
+      }
+    }
+    return code.trim();
+  },
+
   /*
    * Converts given String to its list of anagrams
    * @param {string} string to be converted
