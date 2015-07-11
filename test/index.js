@@ -156,6 +156,19 @@ describe('#toMorseCode', function() {
 	});
 });
 
+describe('#fromMorseCode', function(){
+	it('should convert from Morse Code', function(done){
+		encodify.fromMorseCode('... . -.-. .-. . -').should.eql('secret');
+		encodify.fromMorseCode('.... .- .--. .--. -.-- -..-. -... .. .-. - .... -.. .- -.-- -..-. -. .--. -.-').should.eql('happy/birthday/npk');
+		done();
+	});
+
+	it('should not convert from Morse Code', function(done){
+		encodify.fromMorseCode('secretofnicas -.-.--').should.eql('secretofnicas!');
+		done();
+	});
+});
+
 describe('#toFlattenedArray', function() {
 	it('should convert to Flattened Array', function(done) {
 		encodify.toFlattenedArray([
